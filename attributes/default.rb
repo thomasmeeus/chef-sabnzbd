@@ -8,7 +8,7 @@ default['sabnzbd']['complete_dir']   = "Downloads/complete"
 default['sabnzbd']['servers'] = [
                                               {   "name" => "usenetserver1.com",
                                                   "username" => "",
-                                                   "timeout" => "120",
+                                                  "timeout" => "120",
                                                   "enable" => "1",
                                                    "fillserver" => "0",
                                                    "connections" => "10",
@@ -31,5 +31,21 @@ default['sabnzbd']['servers'] = [
                                                    "optional" => "1",
                                                    "port" => "80",
                                                    "retention" => "0",
+                                               }
+                                      ]
+default['sabnzbd']['categories'] = [
+                                              {   "name" => "*",
+                                                  "priority" => "",
+                                                  "pp" => "3",
+                                                  "script" => "None",
+                                                  "newsbin" => "",
+                                                   "dir" => ""
+                                               },
+                                              {   "name" => "music",
+                                                  "priority" => "-100",
+                                                   "pp" => "3",
+                                                  "script" => "Default",
+                                                  "newsbin" => "",
+                                                   "dir" => "/Downloads/music"
                                                }
                                       ]

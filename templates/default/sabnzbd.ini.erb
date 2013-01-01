@@ -177,10 +177,12 @@ port = <%= node['port'] %>
 retention = <%= node['retention'] %>
 <% end %>
 [categories]
-[[*]]
-priority = 0
-pp = 3
-name = *
-script = None
-newzbin = ""
-dir = ""
+<% @node['sabnzbd']['categories'].each do |node| %>
+[[<%= node['name'] %>]]
+priority = <%= node['username'] %>
+pp = <%= node['pp'] %>
+name = <%= node['name'] %>
+script = <%= node['script'] %>
+newzbin = <%= node['newzbin'] %>
+dir = <%= node['dir'] %>
+<% end %>
