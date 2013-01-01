@@ -11,7 +11,14 @@ default['sabnzbd']['tv_sort_string'] = "%sn/Season %s/%sn - %sx%0e - %en.%ext"
 default['sabnzbd']['enable_movie_sorting'] = "1"
 default['sabnzbd']['movie_categories'] = "movie,"
 default['sabnzbd']['movie_sort_string'] = "%title (%y)/%title (%y).%ext"
-
+default['sabnzbd']['ignore_samples'] = "0"
+default['sabnzbd']['cleanup_list'] = ".nfo, .sfv"
+default['sabnzbd']['pre_check'] = "1"
+default['sabnzbd']['no_dupes']  = "1"
+default['sabnzbd']['quota_period']  = "m"
+default['sabnzbd']['quota_day']  = "12"
+default['sabnzbd']['quota_size']  = "30"
+default['sabnzbd']['quota_resume'] = "0"
 
 default['sabnzbd']['servers'] = [
                                               {   "name" => "usenetserver1.com",

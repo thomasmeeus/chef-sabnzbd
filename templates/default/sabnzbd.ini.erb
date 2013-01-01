@@ -10,12 +10,12 @@ password_file = ""
 movie_rename_limit = 100M
 ionice = ""
 https_key = server.key
-cleanup_list = ,
+cleanup_list = <%= node["sabnzbd"]['cleanup_list'] %>
 cache_limit = ""
 ignore_unrar_dates = 0
 par_option = ""
 web_color = ""
-pre_check = 0
+pre_check = <%= node["sabnzbd"]['pre_check'] %>
 replace_spaces = 0
 web_color2 = ""
 dirscan_speed = 5
@@ -27,12 +27,12 @@ osx_speed = 1
 bandwidth_limit = 0
 dirscan_dir = ""
 disable_api_key = 0
-quota_period = m
+quota_period = <%= node["sabnzbd"]['quota_period'] %>
 email_to = ,
 rss_filenames = 0
 password = ""
 permissions = ""
-quota_day = ""
+quota_day = <%= node["sabnzbd"]['quota_day'] %>
 auto_disconnect = 1
 use_pickle = 0
 https_chain = ""
@@ -41,7 +41,7 @@ history_limit = 50
 enable_date_sorting = 0
 replace_dots = 0
 movie_sort_extra = -cd%1
-quota_size = ""
+quota_size = <%= node["sabnzbd"]['quota_size'] %>
 rss_rate = 60
 enable_unzip = 1
 download_free = ""
@@ -62,7 +62,7 @@ sfv_check = 1
 date_sort_string = ""
 schedlines = ,
 host = <%= node["sabnzbd"]['host'] %>
-ignore_samples = 0
+ignore_samples = <%= node["sabnzbd"]['ignore_samples'] %>
 req_completion_rate = 100.2
 enable_tsjoin = 1
 auto_browser = 0
@@ -77,7 +77,7 @@ email_account = ""
 email_server = ""
 allow_streaming = 0
 config_lock = 0
-quota_resume = 0
+quota_resume = <%= node["sabnzbd"]['quota_resume'] %>
 api_warnings = 1
 tv_sort_string = <%= node["sabnzbd"]['tv_sort_string'] %>
 movie_extra_folder = 0
@@ -97,7 +97,7 @@ warned_old_queue = 0
 language = en
 check_new_rel = 1
 enable_https = 0
-no_dupes = 0
+no_dupes = <%= node["sabnzbd"]['no_dupes'] %>
 keep_awake = 1
 top_only = 0
 quick_check = 1
