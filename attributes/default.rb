@@ -5,6 +5,14 @@ default['sabnzbd']['port']   = "8080"
 default['sabnzbd']['download_dir']   = "Downloads/incomplete"
 default['sabnzbd']['complete_dir']   = "Downloads/complete"
 
+default['sabnzbd']['enable_tv_sorting'] = "1"
+default['sabnzbd']['tv_categories'] = "tv,"
+default['sabnzbd']['tv_sort_string'] = "%sn/Season %s/%sn - %sx%0e - %en.%ext"
+default['sabnzbd']['enable_movie_sorting'] = "1"
+default['sabnzbd']['movie_categories'] = "movie,"
+default['sabnzbd']['movie_sort_string'] = "%title (%y)/%title (%y).%ext"
+
+
 default['sabnzbd']['servers'] = [
                                               {   "name" => "usenetserver1.com",
                                                   "username" => "",
@@ -49,3 +57,4 @@ default['sabnzbd']['categories'] = [
                                                    "dir" => "/Downloads/music"
                                                }
                                       ]
+
