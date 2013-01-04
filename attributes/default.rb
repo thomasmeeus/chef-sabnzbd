@@ -4,6 +4,8 @@ default['sabnzbd']['host']   = "localhost"
 default['sabnzbd']['port']   = "8080"
 default['sabnzbd']['download_dir']   = "Downloads/incomplete"
 default['sabnzbd']['complete_dir']   = "Downloads/complete"
+default['sabnzbd']['api_key']   = ""
+
 
 default['sabnzbd']['enable_tv_sorting'] = "1"
 default['sabnzbd']['tv_categories'] = "tv,"
@@ -17,7 +19,7 @@ default['sabnzbd']['pre_check'] = "1"
 default['sabnzbd']['no_dupes']  = "1"
 default['sabnzbd']['quota_period']  = "m"
 default['sabnzbd']['quota_day']  = "12"
-default['sabnzbd']['quota_size']  = "30"
+default['sabnzbd']['quota_size']  = "30G"
 default['sabnzbd']['quota_resume'] = "0"
 
 default['sabnzbd']['servers'] = [
