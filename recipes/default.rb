@@ -25,6 +25,14 @@ template "/etc/default/sabnzbdplus" do
   notifies :restart, 'service[sabnzbdplus]'
 end
 
+directory  "/home/#{node['sabnzbd']['user']}/.sabnzbd/" do
+  owner node["sabnzbd"]["user"]
+  group node["sabnzbd"]["group"]
+  mode "0755"
+  recursive true
+  action :create
+end
+
 template "/home/#{node['sabnzbd']['user']}/.sabnzbd/sabnzbd.ini" do
   source "sabnzbd.ini.erb"
   mode 0600
