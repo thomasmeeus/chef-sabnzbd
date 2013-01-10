@@ -61,7 +61,7 @@ date_categories = tv,
 ssl_type = v23
 sfv_check = 1
 date_sort_string = ""
-schedlines = ,
+schedlines = <%= node["sabnzbd"]['schedlines'] %>
 host = <%= node["sabnzbd"]['host'] %>
 ignore_samples = <%= node["sabnzbd"]['ignore_samples'] %>
 req_completion_rate = 100.2
