@@ -45,7 +45,7 @@ movie_sort_extra = -cd%1
 quota_size = <%= node["sabnzbd"]['quota_size'] %>
 rss_rate = 60
 enable_unzip = 1
-download_free = ""
+download_free = <%= node["sabnzbd"]['download_free'] %>
 port = <%= node["sabnzbd"]['port'] %>
 enable_movie_sorting = <%= node["sabnzbd"]['enable_movie_sorting'] %>
 wait_ext_drive = 5
@@ -180,7 +180,7 @@ retention = <%= node['retention'] %>
 [categories]
 <% @node['sabnzbd']['categories'].each do |node| %>
 [[<%= node['name'] %>]]
-priority = <%= node['username'] %>
+priority = <%= node['priority'] %>
 pp = <%= node['pp'] %>
 name = <%= node['name'] %>
 script = <%= node['script'] %>
