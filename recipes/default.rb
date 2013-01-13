@@ -44,3 +44,7 @@ end
 service "sabnzbdplus" do
   action :start
 end
+
+bash "update-rc.d" do
+  code "update-rc.d sabnzbdplus defaults"
+end
