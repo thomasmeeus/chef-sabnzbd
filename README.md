@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/thomasmeeus/chef-sabnzbd.svg?branch=master)](https://travis-ci.org/thomasmeeus/chef-sabnzbd)
 Description
 -----------
 Chef recipe to install and configure Sabnzbd.
