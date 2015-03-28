@@ -1,0 +1,12 @@
+DEPENDENCIES
+  apt
+    git: https://github.com/opscode-cookbooks/apt.git
+    revision: 1480e9f2d15f3573004d9d870e61d33a0c2dbaaf
+  sabnzbd
+    path: .
+    metadata: true
+
+GRAPH
+  apt (2.7.0)
+  sabnzbd (1.2.0)
+    apt (>= 0.0.0)

@@ -1,50 +1,49 @@
-include_recipe "apt::default"
+include_recipe 'apt::default'
 
-apt_repository "sabnzbd" do
-  uri "http://ppa.launchpad.net/jcfp/ppa/ubuntu"
-  distribution node['lsb']['codename']
-  components ["main"]
-  keyserver "keyserver.ubuntu.com"
-  key "4BB9F05F"
+if node['platform'] == 'debian'
+  apt_repository 'contrib' do
+    uri 'http://http.debian.net/debian'
+    distribution node['lsb']['codename']
+    components ['contrib']
+  end
+else
+  apt_repository 'sabnzbd' do
+    uri 'http://ppa.launchpad.net/jcfp/ppa/ubuntu'
+    distribution node['lsb']['codename']
+    components ['main']
+    keyserver 'keyserver.ubuntu.com'
+    key '4BB9F05F'
+  end
 end
 
-%w{
+%w(
   sabnzbdplus sabnzbdplus-theme-smpl
   sabnzbdplus-theme-plush sabnzbdplus-theme-iphone
-  }.each do |pkg|
-      package pkg do
-          action :upgrade
-      end
+).each do |pkg|
+  package pkg do
+    action :install
   end
+end
 
-template "/etc/default/sabnzbdplus" do
-  source "sabnzbd.erb"
-  mode 0644
-  owner "root"
-  group "root"
+template '/etc/default/sabnzbdplus' do
+  source 'sabnzbd.erb'
   notifies :restart, 'service[sabnzbdplus]'
 end
 
-directory  "/home/#{node['sabnzbd']['user']}/.sabnzbd/" do
-  owner node["sabnzbd"]["user"]
-  group node["sabnzbd"]["group"]
-  mode "0755"
+directory "#{node['sabnzbd']['location']}.sabnzbd/" do
   recursive true
   action :create
 end
 
-template "/home/#{node['sabnzbd']['user']}/.sabnzbd/sabnzbd.ini" do
-  source "sabnzbd.ini.erb"
-  mode 0600
+template "#{node['sabnzbd']['location']}.sabnzbd/sabnzbd.ini" do
+  source 'sabnzbd.ini.erb'
   notifies :restart, 'service[sabnzbdplus]'
-  owner node["sabnzbd"]["user"]
-  group node["sabnzbd"]["group"]
 end
 
-service "sabnzbdplus" do
+service 'sabnzbdplus' do
   action :start
 end
 
-bash "update-rc.d" do
-  code "update-rc.d sabnzbdplus defaults"
+bash 'update-rc.d' do
+  code 'update-rc.d sabnzbdplus defaults'
 end
