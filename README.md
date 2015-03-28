@@ -55,10 +55,7 @@ To set the usenet servers, use the following array:
 Requirements
 ------------
 
-Dependencies:
-
-* apt: https://github.com/opscode-cookbooks/apt
-
 Supports:
 
-* Ubuntu 12.10
+* Ubuntu
+* Debian
